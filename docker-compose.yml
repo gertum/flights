@@ -1,0 +1,31 @@
+version: "3.6"
+
+networks:
+  flights-network:
+    name: flights-network
+    external: true
+
+
+services:
+  flights:
+    image: gertum/flights:latest
+    container_name: flights
+    build:
+      context: ./
+      dockerfile: .docker/flights/Dockerfile
+    volumes:
+      - ./:/var/www/html
+#      - ./shared:/var/shared
+#      - ./xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+#      - ../config:/var/www/html/config
+    environment:
+      BASEDIR: /var/www/html
+      COMPOSER_AUTH: '${COMPOSER_AUTH}'
+#      CURRENT_UID: '${CURRENT_UID}'
+    #      SYSTEM_UID: '${SYSTEM_UID}'
+    #      SYSTEM_GID: '${SYSTEM_GID}'
+#    depends_on:
+#      - db1
+    # user: ${CURRENT_UID}
+    networks:
+      - flights-network
