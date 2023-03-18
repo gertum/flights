@@ -21,6 +21,7 @@ services:
     environment:
       BASEDIR: /var/www/html
       COMPOSER_AUTH: '${COMPOSER_AUTH}'
+      HOME: /var/www/html
 #      CURRENT_UID: '${CURRENT_UID}'
     #      SYSTEM_UID: '${SYSTEM_UID}'
     #      SYSTEM_GID: '${SYSTEM_GID}'

@@ -36,6 +36,23 @@ Docker network:
 
     docker network create flights-network
 
+### if need to rebuild docker
+
+    docker build -t gertum/flights .docker/flights
+
+## running
+
+With user rights
+
+    docker exec -itu 1000:1000 flights bash
+
+With root rights
+
+    docker exec -it flights bash
+
+
+
+
     
 
     
