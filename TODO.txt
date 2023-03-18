@@ -1,0 +1,5 @@
+start nginx
+start mariadb or mysql
+
+Start laravel with web
+
