@@ -50,6 +50,10 @@ With root rights
 
     docker exec -it flights bash
 
+Change to full access to the cache and logs files 
+
+    chmod 777 -R storage
+
 
 
 

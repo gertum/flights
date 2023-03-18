@@ -24,3 +24,4 @@ yarn-error.log
 .cache
 .config
 .composer
+.mysql_history
