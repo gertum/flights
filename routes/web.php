@@ -17,3 +17,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/home', [\App\Http\Controllers\HomeController::class, 'show']);
+Route::get('/countries', [\App\Http\Controllers\CountryController::class, 'list']);
