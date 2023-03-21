@@ -10,5 +10,6 @@
     </head>
     <body class="antialiased">
        <h1>Flights management system</h1>
+    <a href="/home"> nuoroda į namus</a>
     </body>
 </html>
