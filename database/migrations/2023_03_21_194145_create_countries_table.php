@@ -16,7 +16,7 @@ return new class extends Migration
             $table->timestamps();
 
             $table->string('name', 64);
-            $table->string('code', 8);
+            $table->string('code', 8)->unique('uq_country_code');;
             $table->string('coordinates', 32);
         });
     }
