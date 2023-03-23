@@ -18,3 +18,5 @@ Route::get('/', function () {
 });
 Route::get('/home', [\App\Http\Controllers\HomeController::class, 'show']);
 Route::get('/countries', [\App\Http\Controllers\CountryController::class, 'list']);
+Route::get('/cities', [\App\Http\Controllers\CityController::class, 'list']);
+//Route::get('/cities/{city_id}', [\App\Http\Controllers\CityController::class, 'view']);

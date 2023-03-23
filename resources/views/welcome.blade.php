@@ -13,6 +13,7 @@
        <ul>
         <li><a href="/home"> nuoroda į namus</a></li>
         <li><a href="/countries"> Šalys</a></li>
+        <li><a href="/cities"> Miestai</a></li>
        </ul>
     </body>
 </html>
