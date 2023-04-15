@@ -3,3 +3,4 @@ start mariadb or mysql
 
 Start laravel with web
 
+Must seed dates in future 2 years for the flights seeder.

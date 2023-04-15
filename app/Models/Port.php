@@ -11,6 +11,8 @@ class Port extends Model
     use HasFactory;
 
     protected $table = 'ports';
+    protected $primaryKey = 'code';
+    protected $keyType = 'string';
 
     public function city(): BelongsTo
     {
