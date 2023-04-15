@@ -69,7 +69,13 @@ Activization for cmd line:
     export PHP_IDE_CONFIG="serverName=flights.dv"
 
 
+# application
 
+## seeding
+
+    php artisan db:seed CitySeeder 
+    php artisan db:seed PortSeeder 
+    php artisan db:seed FlightSeeder 
 
 
     
