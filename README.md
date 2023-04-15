@@ -31,6 +31,7 @@ https://docs.docker.com/engine/install/ubuntu/
 Make environment settings file
 
     cp .env.example .env
+    cp xdebug.ini.example xdebug.ini
 
 Docker network:
 
@@ -53,6 +54,20 @@ With root rights
 Change to full access to the cache and logs files 
 
     chmod 777 -R storage
+
+## xdebug
+
+Must write correct ip address in to xdebug.ini and restart docker container.
+
+To get your container ip address you may write from outside you container:
+
+    docker inspect flights
+
+Activization for cmd line:
+
+    export XDEBUG_SESSION=PHPSTORM
+    export PHP_IDE_CONFIG="serverName=flights.dv"
+
 
 
 
