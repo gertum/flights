@@ -11,9 +11,11 @@ return new class extends Migration {
     public function up(): void
     {
         Schema::create('ports', function (Blueprint $table) {
-            $table->string('code', 32)->primary();
+            $table->string('code', 8)->primary();
             $table->string('name', 128);
             $table->bigInteger('city_id')->unsigned();
+            $table->decimal('longitude', 10, 6);
+            $table->decimal('latitude', 10, 6);
             $table->timestamps();
         });
 

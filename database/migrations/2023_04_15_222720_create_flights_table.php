@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('flights', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('source_port', 32 );
-            $table->string('destination_port', 32 );
+            $table->string('source_port', 8 );
+            $table->string('destination_port', 8 );
             $table->dateTime('departure_time');
             $table->dateTime('arrival_time');
         });

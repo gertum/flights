@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Port;
 
 class PortSeeder extends Seeder
 {
@@ -12,6 +13,6 @@ class PortSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        Port::factory(100)->create();
     }
 }
