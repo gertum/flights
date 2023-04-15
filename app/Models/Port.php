@@ -4,8 +4,16 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class port extends Model
+class Port extends Model
 {
     use HasFactory;
+
+    protected $table = 'ports';
+
+    public function city(): BelongsTo
+    {
+        return $this->belongsTo(City::class, 'fk_city_id');
+    }
 }
