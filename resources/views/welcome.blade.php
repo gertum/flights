@@ -6,14 +6,16 @@
 
         <title>Flights management</title>
 
-
+        @livewireStyles
     </head>
     <body class="antialiased">
        <h1>Flights management system</h1>
+       <livewire:counter />
        <ul>
         <li><a href="/home"> nuoroda į namus</a></li>
         <li><a href="/countries"> Šalys</a></li>
         <li><a href="/cities"> Miestai</a></li>
        </ul>
+       @livewireScripts
     </body>
 </html>
