@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\City;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -10,14 +11,9 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create('ports', function (Blueprint $table) {
-            $table->string('code', 32)->primary();
-            $table->string('name', 128);
-            $table->bigInteger('city_id')->unsigned();
-            $table->timestamps();
+        Schema::table('ports', function (Blueprint $table) {
+            $table->foreign('city_id', 'fk_city_id')->references('id')->on(City::TABLE);
         });
-
-
     }
 
     /**
@@ -25,6 +21,8 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('ports');
+        Schema::table('ports', function (Blueprint $table) {
+            $table->dropForeign('fk_city_id');
+        });
     }
 };
