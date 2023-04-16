@@ -71,6 +71,10 @@ Activization for cmd line:
 
 # application
 
+# migrations
+
+    php artisan migrate
+
 ## seeding
 
     php artisan db:seed CitySeeder 

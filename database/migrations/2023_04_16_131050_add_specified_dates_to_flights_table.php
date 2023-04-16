@@ -4,15 +4,17 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration {
+return new class extends Migration
+{
     /**
      * Run the migrations.
      */
     public function up(): void
     {
         Schema::table('flights', function (Blueprint $table) {
-            $table->foreign('source_port', 'fk_source_port')->references('code')->on('ports');
-            $table->foreign('destination_port', 'fk_destination_port')->references('code')->on('ports');
+            $table -> dateTime("specified_departure_time")->nullable(true);
+            $table -> dateTime("specified_arrival_time")->nullable(true);
+            //
         });
     }
 
@@ -22,8 +24,9 @@ return new class extends Migration {
     public function down(): void
     {
         Schema::table('flights', function (Blueprint $table) {
-            $table->dropForeign('fk_source_port');
-            $table->dropForeign('fk_destination_port');
+            $table->dropColumn("specified_departure_time");
+            $table->dropColumn("specified_arrival_time");
+            //
         });
     }
 };
