@@ -2,18 +2,23 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\City;
 use App\Models\Port;
 use Livewire\Component;
 
 class ShowPorts extends Component
 {
     public $ports;
+
     public $limit;
     public $filter;
     public $addPort;
     public $message;
 
     public $code, $name, $city_id;
+
+    public $cities;
+    public $filtercity;
 
     public function mount()
     {
@@ -27,6 +32,11 @@ class ShowPorts extends Component
             ->limit($this->limit)
             ->with('city')
             ->filter($this->filter)
+            ->get();
+
+        $this->cities = City::query()
+            ->filterName($this->filtercity)
+            ->limit(10)
             ->get();
 
         return view('livewire.show-ports');
@@ -45,8 +55,7 @@ class ShowPorts extends Component
     {
         $this->validate();
         try {
-
-            $port = Port::query()->newModelInstance( [
+            $port = Port::query()->newModelInstance([
                 'code' => $this->code,
                 'name' => $this->name,
                 'city_id' => $this->city_id,
@@ -80,6 +89,6 @@ class ShowPorts extends Component
     protected $rules = [
         'code' => 'required',
         'name' => 'required',
-        'city_id' => 'required'
+        'city_id' => 'required',
     ];
 }

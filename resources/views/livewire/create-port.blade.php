@@ -17,7 +17,14 @@
             </div>
             <div class="form-group mb-3">
                 <label for="city_id">City:</label>
-                <input class="form-control @error('name') is-invalid @enderror" id="city_id" wire:model="city_id" placeholder="Enter city id"></input>
+
+                <input id="filtercity" class="form-control select-input placeholder-active active" type="text" wire:model="filtercity">
+                <select class="form-control @error('name') is-invalid @enderror" wire:model="city_id" >
+                    <option value="''"></option>
+                    @foreach ($cities as $city)
+                        <option value="{{$city->id}}">[{{$city->id}}] {{$city->name}}</option>
+                    @endforeach
+                </select>
                 @error('city_id')
                 <span class="text-danger">{{ $message }}</span>
                 @enderror

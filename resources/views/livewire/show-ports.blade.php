@@ -16,15 +16,18 @@
                 <form class="form-inline">
                     <div class="form-group mb-3">
                         <div class="form-group mb-3">
-                            <label for="filter.code">Code: </label><input class="form-control id=" filter.code"
-                            type="text" wire:model="filter.code">
+                            <label for="filter.code">Code: </label>
+                            <input class="form-control" id="filter.code"
+                                   type="text" wire:model="filter.code">
                         </div>
                         <div class="form-group mb-3">
-                            <label for="filter.name">Name: </label><input class="form-control id=" filter.name"
-                            type="text" wire:model="filter.name">
+                            <label for="filter.name">Name: </label>
+                            <input class="form-control" id="filter.name"
+                                   type="text" wire:model="filter.name">
                         </div>
                         <div>
-                            <label>Limit: </label><input class="form-control type=" text" wire:model.defer="limit">
+                            <label>Limit: </label>
+                            <input class="form-control" type="text" wire:model.defer="limit">
                         </div>
                         <button wire:click="search" class="btn btn-primary btn-sm float-right">Search</button>
                     </div>
