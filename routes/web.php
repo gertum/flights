@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/',\App\Http\Livewire\Home::class);
 Route::get('/port', \App\Http\Livewire\ShowPorts::class);
+Route::get('/flight', \App\Http\Livewire\ShowFlights::class);
 
 
 Route::get('/home', [\App\Http\Controllers\HomeController::class, 'show']);
