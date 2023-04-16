@@ -79,5 +79,9 @@ Activization for cmd line:
 
 
     
+## livewire
 
+Create component
+
+    php artisan make:livewire home
     
