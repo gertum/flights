@@ -40,9 +40,9 @@
         @if($addPort)
             @include('livewire.create-port')
         @endif
-        {{--        @if($updatePost)--}}
-        {{--            @include('livewire.update')--}}
-        {{--        @endif--}}
+        @if($updatePort)
+            @include('livewire.update-port')
+        @endif
 
 
     </div>
@@ -60,6 +60,7 @@
                             <th>Name</th>
                             <th>Description</th>
                             <th>City</th>
+                            <th>Updated at</th>
                             <th>Action</th>
                         </tr>
                         </thead>
@@ -77,10 +78,13 @@
                                         {{$port->city->id}}
                                         {{$port->city->name}}
                                     </td>
-                                    {{--                                    <td>--}}
-                                    {{--                                        <button wire:click="editPost({{$post->id}})" class="btn btn-primary btn-sm">Edit</button>--}}
-                                    {{--                                        <button onclick="deletePost({{$post->id}})" class="btn btn-danger btn-sm">Delete</button>--}}
-                                    {{--                                    </td>--}}
+                                    <td>
+                                        {{$port->updated_at}}
+                                    </td>
+                                    <td>
+                                        <button wire:click="editPort('{{$port->code}}')" class="btn btn-primary btn-sm">Edit</button>
+                                        <button wire:click="deletePort('{{$port->code}}')" class="btn btn-danger btn-sm">Delete</button>
+                                    </td>
                                 </tr>
                             @endforeach
                         @else
