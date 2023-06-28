@@ -89,3 +89,12 @@ Create component
 
     php artisan make:livewire home
     
+# git hints
+
+Custom ssh key:
+
+    GIT_SSH_COMMAND='ssh -i ~/.ssh/opta' git push
+    GIT_SSH_COMMAND='ssh -i ~/.ssh/opta' git pull
+
+and so on ..
+
